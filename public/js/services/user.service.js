@@ -1,10 +1,17 @@
 'use  strict';
 
-app.factory('User', function(DS) {
-	
-  /*
-    create a User jsdata resource 
-  */
 
-})
+	
+app.factory('User', function(DS) {
+    
+	var User = DS.defineResource({
+ 		basepath: '/api',
+ 		idAttribute: '_id',
+ 		name: 'users',
+ 	})
+
+    return User;
+
+}).run(function(User) {})
+
 
